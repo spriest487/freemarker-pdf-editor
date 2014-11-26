@@ -3,6 +3,7 @@
 .classpath
 target/
 bower_components/
+src/main/webapp/lib/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
