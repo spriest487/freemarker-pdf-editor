@@ -6,6 +6,12 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
+	<profiles>
+		<profile>
+			<id>openshift</id>
+		</profile>
+	</profiles>
+
 	<properties>
 		<spring.version>4.1.2.RELEASE</spring.version>
 	</properties>
@@ -66,6 +72,11 @@
 			<artifactId>commons-codec</artifactId>
 			<version>1.10</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.3.2</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -101,30 +112,41 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/src/main/webapp/lib</outputDirectory>
+							<outputDirectory>${basedir}/src/main/webapp</outputDirectory>
 							<resources>
 								<resource>
-									<directory>bower_components/angular</directory>
+									<directory>bower_components</directory>
+									<targetPath>lib</targetPath>
 									<includes>
-										<include>angular.js</include>
+										<include>angular/angular.js</include>
+
+										<include>jquery/dist/jquery.min.js</include>
+										<include>split-pane/split-pane.js</include>
+										<include>split-pane/split-pane.css</include>
+
+										<include>ace-builds/src-noconflict/ace.js</include>
+										<include>ace-builds/src-noconflict/ext-language_tools.js</include>
+										<include>ace-builds/src-noconflict/mode-ftl.js</include>
+										<include>ace-builds/src-noconflict/worker-ftl.js</include>
+										<include>ace-builds/src-noconflict/mode-json.js</include>
+										<include>ace-builds/src-noconflict/worker-json.js</include>
+										<include>ace-builds/src-noconflict/mode-css.js</include>
+										<include>ace-builds/src-noconflict/worker-css.js</include>
+										<include>ace-builds/src-noconflict/theme-xcode.js</include>
+
+										<include>angular-ui-bootstrap-bower/ui-bootstrap-tpls.min.js</include>
+										<include>bootstrap/dist/css/bootstrap.min.css</include>
+
+										<include>angular-ui-ace/ui-ace.js</include>
+
+										<include>angular-split-pane/angular-split-pane.js</include>
 									</includes>
 								</resource>
+								<!-- bootstrap font files -->
 								<resource>
-									<directory>bower_components/ace-builds/src-noconflict</directory>
-									<includes>
-										<include>ace.js</include>
-										<include>ext-language_tools.js</include>
-										<include>mode-ftl.js</include>
-										<include>mode-json.js</include>
-										<include>mode-css.js</include>
-										<include>theme-xcode.js</include>
-									</includes>
-								</resource>
-								<resource>
-									<directory>bower_components/angular-ui-ace</directory>
-									<includes>
-										<include>ui-ace.js</include>
-									</includes>
+									<directory>bower_components/bootstrap/fonts</directory>
+									<targetPath>lib/bootstrap/dist/fonts</targetPath>
+									<include>*.*</include>
 								</resource>
 							</resources>
 						</configuration>

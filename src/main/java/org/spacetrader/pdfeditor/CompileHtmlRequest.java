@@ -13,12 +13,4 @@ public class CompileHtmlRequest {
 	public Map<String, Object> getModel() {
 		return model;
 	}
-	
-	public void setFtl(String ftl) {
-		this.ftl = ftl;
-	}
-	
-	public void setModel(Map<String, Object> model) {
-		this.model = model;
-	}	
 }

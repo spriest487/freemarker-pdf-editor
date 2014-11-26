@@ -17,7 +17,7 @@ angular
 	
 	this.load = function() {
 		try {
-			return angular.fromJson(localStorage[STORAGE_KEY]);
+			return angular.fromJson(localStorage[STORAGE_KEY]) || {};
 		}
 		catch (e) {
 			if (e instanceof SyntaxError) {
