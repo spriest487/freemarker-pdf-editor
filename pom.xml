@@ -10,7 +10,7 @@
 		<profile>
 			<id>openshift</id>
 			<properties>
-			    <npm.command>$OPENSHIFT_DATA_DIR/npm-proxy</npm.command>
+			    <npm.command>${env.OPENSHIFT_DATA_DIR}/npm-proxy</npm.command>
 			</properties>
 		</profile>
 	</profiles>
