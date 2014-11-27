@@ -80,20 +80,20 @@
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>1.2.1</version>
 				<executions>
-					<execution>
-						<id>npm-install-bower</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<configuration>
-							<executable>${npm.command}</executable>
-							<arguments>
-								<argument>install</argument>
-								<argument>bower</argument>
-							</arguments>
-						</configuration>
-					</execution>
+<!-- 					<execution> -->
+<!-- 						<id>npm-install-bower</id> -->
+<!-- 						<phase>prepare-package</phase> -->
+<!-- 						<goals> -->
+<!-- 							<goal>exec</goal> -->
+<!-- 						</goals> -->
+<!-- 						<configuration> -->
+<!-- 							<executable>${npm.command}</executable> -->
+<!-- 							<arguments> -->
+<!-- 								<argument>install</argument> -->
+<!-- 								<argument>bower</argument> -->
+<!-- 							</arguments> -->
+<!-- 						</configuration> -->
+<!-- 					</execution> -->
 					<execution>
 						<id>bower-install</id>
 						<phase>prepare-package</phase>
@@ -174,17 +174,17 @@
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>exec-maven-plugin</artifactId>
 						<executions>
-							<execution>
-								<id>npm-install-bower</id>
-								<configuration>
-									<executable>node</executable>
-									<arguments>
-										<argument>npm_openshift.js</argument>
-										<argument>install</argument>
-										<argument>bower</argument>
-									</arguments>
-								</configuration>
-							</execution>
+<!-- 							<execution> -->
+<!-- 								<id>npm-install-bower</id> -->
+<!-- 								<configuration> -->
+<!-- 									<executable>node</executable> -->
+<!-- 									<arguments> -->
+<!-- 										<argument>npm_openshift.js</argument> -->
+<!-- 										<argument>install</argument> -->
+<!-- 										<argument>bower</argument> -->
+<!-- 									</arguments> -->
+<!-- 								</configuration> -->
+<!-- 							</execution> -->
 							<execution>
 								<id>bower-install</id>
 								<configuration>
