@@ -1,3 +1,4 @@
-The OpenShift `jbossews` cartridge documentation can be found at:
+freemarker-pdf-editor
+=====================
 
-http://openshift.github.io/documentation/oo_cartridge_guide.html#tomcat
+Webapp to edit Freemarker templates with quick conversion and previews of the result in HTML and PDF
