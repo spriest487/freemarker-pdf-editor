@@ -6,18 +6,8 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<profiles>
-		<profile>
-			<id>openshift</id>
-			<properties>
-			    <npm.command>${env.OPENSHIFT_DATA_DIR}npm-proxy</npm.command>
-			</properties>
-		</profile>
-	</profiles>
-
 	<properties>
 		<spring.version>4.1.2.RELEASE</spring.version>
-		<npm.command>npm</npm.command>
 	</properties>
 
 	<dependencies>
@@ -174,4 +164,40 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<profiles>
+		<profile>
+			<id>openshift</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>npm-install-bower</id>
+								<configuration>
+									<executable>node</executable>
+									<arguments>
+										<argument>npm_openshift.js</argument>
+										<argument>install</argument>
+										<argument>bower</argument>
+									</arguments>
+								</configuration>
+							</execution>
+							<execution>
+								<id>bower-install</id>
+								<configuration>
+									<executable>node_modules/.bin/bower</executable>
+									<arguments>
+										<argument>install</argument>
+									</arguments>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
