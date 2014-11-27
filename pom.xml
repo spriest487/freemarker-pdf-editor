@@ -9,11 +9,15 @@
 	<profiles>
 		<profile>
 			<id>openshift</id>
+			<properties>
+			    <npm.command>$OPENSHIFT_DATA_DIR/npm-proxy</npm.command>
+			</properties>
 		</profile>
 	</profiles>
 
 	<properties>
 		<spring.version>4.1.2.RELEASE</spring.version>
+		<npm.command>npm</npm.command>
 	</properties>
 
 	<dependencies>
@@ -93,7 +97,7 @@
 							<goal>exec</goal>
 						</goals>
 						<configuration>
-							<executable>npm</executable>
+							<executable>${npm.command}</executable>
 							<arguments>
 								<argument>install</argument>
 								<argument>bower</argument>
