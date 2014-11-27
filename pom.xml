@@ -87,6 +87,7 @@
 				<version>1.2.1</version>
 				<executions>
 					<execution>
+						<id>npm-install-bower</id>
 						<phase>prepare-package</phase>
 						<goals>
 							<goal>exec</goal>
@@ -100,6 +101,7 @@
 						</configuration>
 					</execution>
 					<execution>
+						<id>bower-install</id>
 						<phase>prepare-package</phase>
 						<goals>
 							<goal>exec</goal>
