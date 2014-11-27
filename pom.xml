@@ -91,14 +91,27 @@
 						<goals>
 							<goal>exec</goal>
 						</goals>
+						<configuration>
+							<executable>npm</executable>
+							<arguments>
+								<argument>install</argument>
+								<argument>bower</argument>
+							</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>bower</executable>
+							<arguments>
+								<argument>install</argument>
+							</arguments>
+						</configuration>
 					</execution>
 				</executions>
-				<configuration>
-					<executable>bower</executable>
-					<arguments>
-						<argument>install</argument>
-					</arguments>
-				</configuration>
 			</plugin>
 
 			<plugin>
