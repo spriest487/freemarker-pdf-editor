@@ -103,14 +103,14 @@
 			<tabset style="width: 50%; left: 50%">
 				<tab heading="Processed HTML">
 					<div class="htmlOutput editorPaneContent">
-						<iframe ng-if="!!htmlOutput" srcdoc="{{htmlOutput}}"></iframe>
+						<iframe ng-if="!!htmlOutput" ng-attr-srcdoc="{{htmlOutput}}"></iframe>
 					</div>
 				</tab>
 				<tab heading="PDF">
 					<div class="pdfOutput editorPaneContent">
 						<object ng-if="!!pdfOutput" 
 							type="application/pdf"
-							data="data:application/pdf;base64,{{pdfOutput}}"></object>
+							ng-attr-data="data:application/pdf;base64,{{pdfOutput}}"></object>
 					</div>
 				</tab>
 			</tabset>
