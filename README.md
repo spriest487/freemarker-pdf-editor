@@ -13,11 +13,20 @@ XML.
 The model passed to FreeMarker for rendering can be edited as JSON. At the
 moment there is no support for simulating resources being loaded from the
 server, so any resource URLs (images, stylesheets) must be fully qualified
-external URLs.
+external URLs
+
+Requirements
+==
+This app is currently only tested in Chrome. It currently depends on the
+browser's own PDF viewing capabilities. The HTML preview works by simply
+copying the entire document into an `<iframe>`'s `srcdoc` attribute which
+seems only to work in Chrome.
+
+You will need Maven 3 and NPM installed to build and run the project.
 
 Getting started
 ==
-You will need Maven 3 and NPM installed. Clone the project and run the command
+Clone the project and run the command
 `mvn jetty:run` in that directory. The app will be available on 
 `http://localhost:8080/pdf-editor/action/index`. If you need to use a different
 port, run the command with `-Djetty.port=(port number)`.
